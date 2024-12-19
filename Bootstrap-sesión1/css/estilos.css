@@ -1,0 +1,60 @@
+#menu, #menu2{
+    height: 50px;
+}
+
+#menu ul{
+    text-decoration: none;
+    list-style: none;
+    line-height: 50px;
+}
+
+#menu2 ul{
+    text-decoration: none;
+    list-style: none;
+    line-height: 50px;
+}
+
+.item{
+    height: 150px;
+}
+
+footer{
+    height: 50px;
+    line-height: 50px;
+}
+
+.lateral{
+    height: 250px;
+}
+
+/* para cuadrar el espacio de cada div,... divido el heigth total entre los elementos */
+.lateral > div{
+    height: calc(250px / 3);
+}
+
+@media (max-width: 768px){
+    #menu, #menu2{
+        height: auto;
+    }
+}
+
+/* Breakpoints
+Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) { ... } */
+
+.clearfix{
+    float:none;
+    clear:both;
+}

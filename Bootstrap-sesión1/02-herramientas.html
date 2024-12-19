@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- recomendada esta configuración -->
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Sesión 1 - Bootstrap</title>
+    <!-- Nota: bootstrap usa Flex internamente -->
+    <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <!-- defino mis estilos a continuación para sobreescribir aspectos personalizados -->
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <!-- voy a ver herramientas de bootstrap -->
+    <!-- aplicar ancho y alto a través de clases de bootstrap -->
+    <div class="container" style="height: 500px;">
+        <h1>Herramientas disponibles en Bootstrap</h1>
+        <hr>
+        <!-- aplico clases para los bordes. Rounded le mete border radius -->
+        <!-- aplico float, colores con bg- y a los textos -->
+        <!-- m- margin, ml- margin left, mr- margin right, mx- margin left y right, my- margin abajo y arriba,.. 
+            mt- margin top, mx-auto es igual a margin 0 auto
+        esto mismo para padding -->
+        <!-- temas de sombras: shadow shadow-sm shadow-lg -->
+        <!-- clase de invisible y visible -->
+        <div class="bg-primary caja w-75 h-25 border border-danger-subtle rounded-1 rounded-top-4">
+            Esto es una caja
+        </div>
+        <div class="text-muted bg-light caja w-75 h-25 border border-danger-subtle rounded-circle text-center">
+            Esto es una caja 2
+        </div>
+        <div class="text-white float-sm-none caja w-25 h-25 border border-primary rounded-1 rounded-top-4">
+            Esto es una caja 3
+        </div>
+        <div class="bg-success float-md-start float-sm-none caja w-25 h-25 border border-dark rounded-1 rounded-top-4">
+            Esto es una caja 4
+        </div>
+        <!-- necesito limpiar los flotados -->
+        <div class="clearfix"></div>
+        <br>
+        <h2>Siguiente sección</h1>
+        <!-- clases para los textos en bootstrap -->
+        <p class="display-1">esto es un párrafo</p>
+        <p class="display-4">esto es un párrafo</p>
+        <p class="text-center text-uppercase">esto es un párrafo</p>
+        <!-- trozo de código -->
+        <code> 
+            sdfsafs
+        </code>
+    </div>
+    
+
+    <!-- bootstrap necesita jquery -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

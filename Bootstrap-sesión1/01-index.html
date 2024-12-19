@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- recomendada esta configuración -->
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <title>Primeros pasos - Aprendiendo Bootstrap</title>
+    <!-- Nota: bootstrap usa Flex internamente -->
+    <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css" />
+    <!-- defino mis estilos a continuación para sobreescribir aspectos personalizados -->
+    <style>
+      .menu__list {
+        text-decoration: none;
+        list-style: none;
+        line-height: 50px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mi-web w-75 m-auto border border-danger p-4">
+      <!-- p-4 es el padding. pt padding-top. 
+            hay padding hasta 5 y con esto le metería 3rem de padding, serían 48px
+            p-1 son 4px aprox, p-2 8px, 3 16px
+            w-XX width del XX%
+            m -> margin en este caso margin 0 auto -->
+      <!--
+            <h1>Bootstrap</h1>
+        <h2>inicio con Bootstrap</h2>
+        <button class="btn btn-success">Soy un botón</button> -->
+
+      <!-- organización en bootstrap
+        ir a Layout en bootstrap
+        Container
+        Grid de bootstrap -> tamaños: extra small, small, medium, large, extra large -->
+
+      <!-- Web full de boostrap  -->
+      <div class="container">
+        <!-- está centrado -->
+        <!-- <div class="container-fluid"> ocupa el 100% -->
+        <!-- mirar en bootstrap el tema de Responsive breakpoints -->
+        <!-- voy a definir diferentes filas -->
+        <div class="row">
+          <header id="header" class="col-12 bg-primary text-white p-2 pl-5">
+            <!-- le indico col-12 para que ocupe todo el espacio que tiene definido de máximo que nos da bootstrap, 
+                        es decir va a ocupar el 100%
+                    pl-X es padding left -->
+            <h1>Web full Bootstrap</h1>
+          </header>
+          <nav class="menu bg-secondary col-12 col-sm-12 col-md-8 text-white">
+            <ul class="menu__list row w-75">
+              <li class="col-12 col-sm-3 col-md">Inicio</li>
+              <li class="col-12 col-sm-3 col-md">Pag. 1</li>
+              <li class="col-12 col-sm-3 col-md">Pag. 2</li>
+              <li class="col-12 col-sm-3 col-md">Contacto</li>
+            </ul>
+          </nav>
+          <!-- en responsive para ocultar en tamaños concretos -->
+          <nav
+            class="menu col-4 bg-success text-white d-block d-sm-none d-none d-md-block"
+          >
+            <ul class="menu__list row">
+              <li class="col-12 col-sm-12 col-md">Info A</li>
+              <li class="col-12 col-sm-12 col-md">Info B</li>
+            </ul>
+          </nav>
+
+          <section id="content" class="col-12">
+            <!-- meto class row para que se pongan una section al lado del aside -->
+            <div class="row">
+              <!-- en responsive ocupo 12 en tamaño pequeño y muy pequeño porque el Aside lo oculto y a partir de mediano ocupo 9 porque el aside se ve nuevamente. -->
+              <section id="products" class="col-12 col-sm-12 col-md-9 border">
+                <h2>Productos</h2>
+                <hr />
+                <div class="items">
+                  <!-- lo realizo de esta forma para que ocupen el mismo espacio y se reparta de igual forma -->
+                  <div class="row mt-1">
+                    <div class="item col bg-primary m-2">producto 1</div>
+                    <div class="item col bg-warning m-2">producto 2</div>
+                    <div class="item col bg-danger m-2">producto 3</div>
+                  </div>
+                  <div class="row mt-1">
+                    <div class="item col bg-primary m-2">producto 4</div>
+                    <div class="item col bg-warning m-2">producto 5</div>
+                    <div class="item col col-md-6 bg-danger m-2">
+                      producto 6
+                    </div>
+                  </div>
+                  <!-- como los alineo horizontalmente mediante justify
+                                podemos utilizar  justify-content-start, justify-content-between,...-->
+                  <div class="row mt-1 justify-content-start">
+                    <div class="item col bg-primary m-2">producto 7</div>
+                    <div class="item col bg-warning m-2">producto 8</div>
+                    <div class="item col bg-primary m-2">producto 9</div>
+                  </div>
+                  <!-- offset: nos permite columnas de espaciado entre las diferentes columnas -->
+                  <div class="row mt-1">
+                    <div class="item col-3 bg-primary">producto 10</div>
+                    <div class="item col-3 bg-warning">producto 11</div>
+                    <div class="item col-3 bg-danger">producto 12</div>
+                    <div class="item col-2 bg-primary offset-1">
+                      producto 13
+                    </div>
+                  </div>
+
+                  <!-- aplicando responsivo en Bootstrap de forma personalizada -->
+                  <!-- https://getbootstrap.com/docs/5.3/layout/containers/
+                                Extra small <576px Small ≥576px
+                                Medium ≥768px Large ≥992px X-Large ≥1200px XX-Large ≥1400px
+                                .container	100%	540px	720px	960px	1140px	1320px
+                                .container-sm	100%	540px	720px	960px	1140px	1320px
+                                .container-md	100%	100%	720px	960px	1140px	1320px
+                                .container-lg	100%	100%	100%	960px	1140px	1320px
+                                .container-xl	100%	100%	100%	100%	1140px	1320px
+                                .container-xxl	100%	100%	100%	100%	100%	1320px
+                                .container-fluid	100%	100%	100%	100%	100%	100%
+
+                                https://getbootstrap.com/docs/5.3/layout/grid/
+                                xs <576px	sm ≥576px	md ≥768px	lg ≥992px	xl ≥1200px	xxl ≥1400px
+                                Container max-width	None (auto)	540px	720px	960px	1140px	1320px
+                                Class prefix	.col-	.col-sm-	.col-md-	.col-lg-	.col-xl-	.col-xxl-
+                                # of columns	12 -->
+                  <div class="row mt-1">
+                    <!-- actuo en el tamaño mediano tocando col-md segun la info de arriba -->
+                    <div
+                      class="item col col-md-12 col-sm-12 bg-primary mt-1 pd-2"
+                    >
+                      producto 1
+                    </div>
+                    <div
+                      class="item col col-md-6 col-sm-12 bg-warning mt-1 pd-2"
+                    >
+                      producto 2
+                    </div>
+                    <div
+                      class="item col col-md-6 col-sm-12 bg-danger mt-1 pd-2"
+                    >
+                      producto 3
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!-- en responsive escondo el lateral para tamaño pequeño y muy pequeño
+                        Si quiero que se ponga en columan quizás aquí trabajo con Flex o Grid directamente en lugar de class="row" -->
+              <aside class="col-3 border d-block d-sm-none d-none d-md-block">
+                <!-- alineación lateral align-items-start, align-items-center-->
+                <h2>Barra lateral</h2>
+                <hr />
+                <div class="lateral row bg-light align-items-center">
+                  <div class="col-4 bg-primary align-self-start">elem.1</div>
+                  <div class="col-4 bg-success align-self-center">elem.2</div>
+                  <div class="col-4 bg-warning align-self-end">elem.3</div>
+                </div>
+                <hr />
+                <div class="lateral row bg-light align-items-center">
+                  <div class="col-4 bg-primary align-self-start order-3">
+                    elem.4
+                  </div>
+                  <div class="col-4 bg-success align-self-center order-2">
+                    elem.5
+                  </div>
+                  <div class="col-4 bg-warning align-self-end order-1">
+                    elem.6
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </section>
+          <footer class="col-lg-12 bg-info text-white">
+            Footer uso de Bootstrap
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <!-- bootstrap necesita jquery -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
